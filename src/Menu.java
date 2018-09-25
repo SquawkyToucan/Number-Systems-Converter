@@ -1,6 +1,7 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -135,7 +136,18 @@ public class Menu implements ActionListener {
 			frame.pack();
 		}
 		if(combo.getSelectedItem().equals("Hexadecimal") && combo2.getSelectedItem().equals("Decimal")) {
-			label.setText("ERROR ERROR");
+			HashMap<Character, Integer> convert = new HashMap<>();
+			
+				
+			convert.put('A', 10);
+			convert.put('B', 11);
+			convert.put('C', 12);
+			convert.put('D', 13);
+			convert.put('E', 14);
+			convert.put('F', 15);
+			
+			char[] charArr = textBox.getText().toCharArray();
+			
 			frame.pack();
 		}
 	}
