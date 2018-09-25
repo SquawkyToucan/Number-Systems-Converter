@@ -111,8 +111,26 @@ public class Menu implements ActionListener {
 			frame.pack();
 		}
 		if(combo.getSelectedItem().equals("Binary") && combo2.getSelectedItem().equals("Hexadecimal")) {
-			label.setText("ERROR ERROR");
-			frame.pack();
+			// Binary to hexadecimal
+			/* DO THIS: Bin -> Dec -> Hex */
+			try {
+				int binaryNumber = Integer.parseInt(textBox.getText());
+				// This is now in an integer which should be changed into a set of numbers, each with a length of four
+				// Split the binary like this 110110010 (1) (1011) (0010)
+				// Then, convert the numbers into normal, which is (1) (11) (2)
+				// Then, convert those numbers into hex, which becomes (1) (B) (2) = 1B2
+				int length = textBox.getText().length();
+				System.out.println("Received number " + binaryNumber + " with amount of digits " + length);
+				// Find the modulo and add 4 - modulo zeros to the number
+				// Make sure that if it begins with "0000" we don't multiply it by 0
+				
+			}
+			catch (Exception exception) {
+				label.setText("There was an error when trying to convert your number. Are you sure that it was in binary?");
+			}
+			finally {
+				frame.pack();
+			}
 		}
 		if(combo.getSelectedItem().equals("Hexadecimal") && combo2.getSelectedItem().equals("Binary")) {
 			String hex = textBox.getText();
@@ -140,6 +158,7 @@ public class Menu implements ActionListener {
 		}
 	}
 	public void decToBin() {
+		
 		
 	}
 }
