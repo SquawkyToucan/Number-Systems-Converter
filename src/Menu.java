@@ -102,19 +102,20 @@ public class Menu implements ActionListener {
 			frame.pack();
 		}
 		if(combo.getSelectedItem().equals("Hexadecimal") && combo2.getSelectedItem().equals("Decimal")) {
-			HashMap<Character, Integer> convert = new HashMap<>();
+			String digits = "0123456789ABCDEF";
 			
-				
-			convert.put('A', 10);
-			convert.put('B', 11);
-			convert.put('C', 12);
-			convert.put('D', 13);
-			convert.put('E', 14);
-			convert.put('F', 15);
+			String hex = textBox.getText();
+			hex = hex.toUpperCase();
 			
-			char[] charArr = textBox.getText().toCharArray();
+			int value = 0;
 			
-			frame.pack();
+			for (int i = 0; i < hex.length(); i++) {
+				char c = hex.charAt(i);
+				int d = digits.indexOf(c);
+				value = 16 *  value + d;
+			}
+			
+			label.setText(""+value);
 		}
 	}
 
