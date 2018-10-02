@@ -116,6 +116,8 @@ public class Menu implements ActionListener {
 			}
 			
 			label.setText(""+value);
+			frame.pack();
+			System.out.println(value);
 		}
 	}
 
