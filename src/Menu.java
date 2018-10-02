@@ -102,8 +102,10 @@ public class Menu implements ActionListener {
 			frame.pack();
 		}
 		if(combo.getSelectedItem().equals("Hexadecimal") && combo2.getSelectedItem().equals("Decimal")) {
+
 			label.setText(""+hexToDec(textBox.getText()));
 			frame.pack();
+
 		}
 	}
 
